@@ -5,20 +5,23 @@
   <title>LQFB Stats Analyzer</title>
 </head>
 <body>
-  <ul class="menu">
+  <ul class="navs nav-tabs menu">
     <li><a href="#/viewActive">Attivi</a></li>
     <li><a href="#/viewTimeLine">Timeline</a></li>
   </ul>
 
   <div ng-view></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
-
+  <footer>
+      <div>Angular seed app: v<span app-version></span>
+      </div>
+  </footer>
   <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
   -->
   <script src="lib/angular/angular.js"></script>
   <script src="lib/angular/angular-route.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
   <script src="js/app.js"></script>
   <script src="js/services.js"></script>
   <script src="js/controllers.js"></script>

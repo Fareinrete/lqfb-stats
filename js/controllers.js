@@ -1,11 +1,11 @@
 'use strict';
 
 /* Controllers */
+var controllers = angular.module('lqfb-stats.controllers', []);
 
-angular.module('lqfb-stats.controllers', []).
-  controller('MyCtrl1', [function() {
+var showActive = function($scope) {
+      $scope.obj = {meta : 'in cui ci sono i dati'};
+  }
 
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+controllers.
+  controller('showActive', showActive);
