@@ -18,11 +18,13 @@ angular.module('lqfb-stats', [
       $routeProvider.otherwise({redirectTo: '/'});
     }])
     .factory('Actives', function($resource){
-         return $resource('http://rs1.proposte.fermareildeclino.it/api/users/activated', {},{
-             get: {method: 'GET', isArray:false},
-             list:{isArray:false, method:'get',
-                   transformResponse: function (data, headers) {
-                   return data; 
-                 }}
-         });
+         return $resource('http://rs1.proposte.fermareildeclino.it/api/users/activated',
+                          {alt:'json', callback:'JSON_CALLBACK'},
+                            {
+                               get: {method: 'GET', isArray:false},
+                               list:{isArray:false, method:'jsonp',
+                                   transformResponse: function (data, headers) {
+                                       return data; 
+                               }}
+                         });
     }); 
