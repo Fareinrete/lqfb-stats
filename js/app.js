@@ -21,10 +21,8 @@ angular.module('lqfb-stats', [
          return $resource('http://rs1.proposte.fermareildeclino.it/api/users/activated',
                           {alt:'json', callback:'JSON_CALLBACK'},
                             {
-                               get: {method: 'GET', isArray:false},
-                               list:{isArray:false, method:'jsonp',
-                                   transformResponse: function (data, headers) {
-                                       return data; 
+                               get: {method: 'jsonp', isArray:false, transformResponse: function (data, headers) {
+                                           return data;
                                }}
                          });
     }); 
