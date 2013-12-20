@@ -10,7 +10,7 @@ angular.module('lqfb-stats', [
   'lqfb-stats.controllers'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/viewActive', {templateUrl: 'partials/active.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/viewTimeLine', {templateUrl: 'partials/timeline.html', controller: 'MyCtrl2'});
+  $routeProvider.when('/viewActive', {templateUrl: 'views/active.html', controller: 'MyCtrl1'});
+  $routeProvider.when('/viewTimeLine', {templateUrl: 'views/timeline.html', controller: 'MyCtrl2'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]);
