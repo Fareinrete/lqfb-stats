@@ -20,7 +20,5 @@ angular.module('lqfb-stats', [
       $routeProvider.otherwise({redirectTo: '/'});
     }])
     .factory('Actives', function($http, $templateCache){
-         return $http.jsonp(REST.activated, {cache: $templateCache, transformResponse: function (data, headers) {
-                    return data;
-                }});
+         return $http.jsonp(REST.activated, {cache: $templateCache});
     }); 
