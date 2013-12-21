@@ -1,10 +1,14 @@
 'use strict';
 
 /* Controllers */
+var REST = { activated: 'http://api.fareinrete.org/v1/users/activated' }
+
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showActive($scope, $http) {
    $scope.obj = {meta : 'in cui ci sono i dati'};
+   $scope.status = null;
+   $scope.data = null; 
     
     function getActives() {
        $http.jsonp(REST.activated)
