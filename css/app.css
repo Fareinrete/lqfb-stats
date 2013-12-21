@@ -1,4 +1,11 @@
 /* app css stylesheet */
+body {
+  font: 12px sans-serif;
+}
+
+.arc path {
+  stroke: #fff;
+}
 
 .menu {
   list-style: none;

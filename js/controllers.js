@@ -1,17 +1,21 @@
 'use strict';
 
 /* Controllers */
-var REST = { activated: 'http://api.fareinrete.org/v1/users/activated?callback=JSON_CALLBACK' }
+var ENDPOINTS = 
+          { activated:       'http://api.fareinrete.org/v1/users/activated?callback=JSON_CALLBACK',
+            tl_activations:  'http://api.fareinrete.org/v1/users/activations?callback=JSON_CALLBACK',
+            tl_activated:    'http://api.fareinrete.org/v1/users/lastlogin?callback=JSON_CALLBACK',
+            admin_activated: 'http://api.fareinrete.org/v1/admins/activated?callback=JSON_CALLBACK'
+           };
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showActive($scope, $http) {
-   $scope.obj = {meta : 'in cui ci sono i dati'};
    $scope.status = null;
    $scope.data = null; 
     
     function getActives() {
-        $http.jsonp(REST.activated)
+        $http.jsonp(ENDPOINTS.activated)
            .success(function(data, status) {
                $scope.status = status;
                $scope.data = data;
