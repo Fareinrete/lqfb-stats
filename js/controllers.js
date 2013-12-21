@@ -8,9 +8,6 @@ function showActive($scope, Actives) {
     
     function getActives() {
        $scope.data = Actives
-             .then(function(res){
-                   $scope.data = res;                
-             });
        console.log($scope.data)
     }
     getActives();
