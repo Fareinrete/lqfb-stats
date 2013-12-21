@@ -18,7 +18,5 @@ angular.module('lqfb-stats', [
       $routeProvider.when('/viewActive', {templateUrl: 'views/active.html', controller: 'showActive'});
       $routeProvider.when('/viewTimeLine', {templateUrl: 'views/timeline.html'});
       $routeProvider.otherwise({redirectTo: '/'});
-    }])
-    .factory('Actives', function($http, $templateCache){
-         return $http.jsonp(REST.activated, {cache: $templateCache});
-    }); 
+    }]);
+   
