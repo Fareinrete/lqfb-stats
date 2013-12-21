@@ -8,6 +8,14 @@ function showActive($scope, Actives) {
     
     function getActives() {
        $scope.data = Actives
+           .success(function(data, status) {
+               $scope.status = status;
+               $scope.data = data;
+           })
+           .error(function(data, status) {
+               $scope.data = data || "Request failed";
+               $scope.status = status;
+           });
        console.log($scope.data)
     }
     getActives();
