@@ -17,6 +17,7 @@ function showActive($scope, Actives) {
                $scope.status = status;
            });
        console.log($scope.data)
+       console.log($scope.status)
     }
     getActives();
 }
