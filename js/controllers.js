@@ -7,7 +7,8 @@ function showActive($scope, Actives) {
    $scope.obj = {meta : 'in cui ci sono i dati'};
     
     function getActives() {
-       $scope.data = Actives
+       $scope.data = Actives;
+       console.log($scope.data)
     }
     getActives();
 }
