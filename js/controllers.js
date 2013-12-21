@@ -8,6 +8,7 @@ function showActive($scope, Actives) {
     
     function getActives() {
        $scope.data = Actives.get()
+       $scope.meta = $scope.data.meta
     }
     getActives();
 }
