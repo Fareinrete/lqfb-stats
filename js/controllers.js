@@ -1,7 +1,7 @@
 'use strict';
 
 /* Controllers */
-var REST = { activated: 'http://api.fareinrete.org/v1/users/activated' }
+var REST = { activated: 'http://api.fareinrete.org/v1/users/activated?callback=JSON_CALLBACK' }
 
 function jsonp_callback(data) {
     // returning from async callbacks is (generally) meaningless
