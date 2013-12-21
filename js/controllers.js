@@ -7,7 +7,7 @@ function showActive($scope, $http) {
    $scope.obj = {meta : 'in cui ci sono i dati'};
     
     function getActives() {
-       $http.get(REST.activated, {callback: 'JSON_CALLBACK'})
+       $http.jsonp(REST.activated)
            .success(function(data, status) {
                $scope.status = status;
                $scope.data = data;
