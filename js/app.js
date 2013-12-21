@@ -3,6 +3,8 @@
 //load 
 //'http',
 
+var REST = { activated: 'http://api.fareinrete.org/v1/users/activated' }
+
 // Declare app level module which depends on filters, and services
 angular.module('lqfb-stats', [
   'ngRoute',
@@ -18,6 +20,6 @@ angular.module('lqfb-stats', [
       $routeProvider.otherwise({redirectTo: '/'});
     }])
     .factory('Actives', function($http){
-         return $http.get('http://rs1.proposte.fermareildeclino.it/api/users/activated')
+         return $http.jsonp(REST.activated)
                    .success(function (data, headers) { return data; });
     }); 
