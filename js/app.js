@@ -20,6 +20,5 @@ angular.module('lqfb-stats', [
       $routeProvider.otherwise({redirectTo: '/'});
     }])
     .factory('Actives', function($http){
-         return $http.jsonp(REST.activated, {callback:'JSON_CALLBACK'})
-                   .success(function (data, headers) { return data; });
+         return $http.jsonp(REST.activated)
     }); 
