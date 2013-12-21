@@ -10,10 +10,6 @@ function showActive($scope, Actives) {
        $scope.data = Actives
              .then(function(res){
                    $scope.data = res;                
-             })
-             .error(function(data, status, headers, config) {
-                   console.log(data, status)
-                
              });
        console.log($scope.data)
     }
