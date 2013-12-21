@@ -3,11 +3,6 @@
 /* Controllers */
 var REST = { activated: 'http://api.fareinrete.org/v1/users/activated?callback=JSON_CALLBACK' }
 
-function jsonp_callback(data) {
-    // returning from async callbacks is (generally) meaningless
-    console.log(data.found);
-}
-
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showActive($scope, $http) {
