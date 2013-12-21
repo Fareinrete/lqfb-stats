@@ -20,13 +20,16 @@ function showActive($scope, $http) {
            .success(function(data, status) {
                $scope.status = status;
                $scope.data = data;
+               console.log($scope.data)
+               console.log($scope.status)
            })
            .error(function(data, status) {
                $scope.data = data || "Request failed";
                $scope.status = status;
+               console.log($scope.data)
+               console.log($scope.status)
            });
-       console.log($scope.data)
-       console.log($scope.status)
+       
     }
     getActives();
 }
