@@ -3,7 +3,7 @@
 /* Controllers */
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-function showActive($scope, $http, Actives) {
+function showActive($scope, $http) {
    $scope.obj = {meta : 'in cui ci sono i dati'};
     
     function getActives() {
