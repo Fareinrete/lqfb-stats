@@ -17,12 +17,7 @@ angular.module('lqfb-stats', [
       $routeProvider.when('/viewTimeLine', {templateUrl: 'views/timeline.html'});
       $routeProvider.otherwise({redirectTo: '/'});
     }])
-    .factory('Actives', function($resource){
-         return $resource('http://rs1.proposte.fermareildeclino.it/api/users/activated',
-                          {alt:'json', callback:'JSON_CALLBACK'},
-                            {
-                               get: {method: 'jsonp', isArray:false, transformResponse: function (data, headers) {
-                                           return data;
-                               }}
-                         });
+    .factory('Actives', function($http){
+         return $http.get('http://rs1.proposte.fermareildeclino.it/api/users/activated')
+                   .success(function (data, headers) { return data; });
     }); 
