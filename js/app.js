@@ -3,7 +3,6 @@
 //load 
 //'http',
 
-var REST = { activated: 'http://api.fareinrete.org/v1/users/activated' }
 
 // Declare app level module which depends on filters, and services
 angular.module('lqfb-stats', [
