@@ -18,6 +18,6 @@ angular.module('lqfb-stats', [
       $routeProvider.otherwise({redirectTo: '/'});
     }])
     .factory('Actives', function($http){
-         return $http.get('http://rs1.proposte.fermareildeclino.it/api/users/activated')
+         return $http.jsonp('http://rs1.proposte.fermareildeclino.it/api/users/activated')
                    .success(function (data, headers) { return data; });
     }); 
