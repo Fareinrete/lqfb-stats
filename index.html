@@ -17,9 +17,18 @@
     <div class="container">
     
     <div class="row">
+       <div class="col-md-4 graph">
+       <h4>{{graph.description}}</h4>
+       <br/>
+       </div>
+       <div class="col-md-4 graph">
+       </div>
+       <div class="col-md-4 graph">
+       </div>
+    </div>
+    <div class="row">
         <div ng-controller="showActive" class="col-md-4 graph">
-            <h3>{{graph.description}}</h3>
-            <br/>
+            
             <graphactives values="graph.data"></graphactives>
             
         </div>
