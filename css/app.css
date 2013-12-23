@@ -9,6 +9,7 @@ body {
 
 .graph{
     border:1px solid;
+    min-height:150px;
     
 }
 

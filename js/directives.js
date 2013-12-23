@@ -7,7 +7,7 @@ directives.directive('appVersion', ['version',
             elm.text(version);
         };
     }
-]).directive('graphActive', function() {
+]).directive('graphactives', function() {
     return {
         restrict: 'E',
         scope: {
@@ -17,7 +17,7 @@ directives.directive('appVersion', ['version',
             scope.$watch('values', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
-                    d3.select('svg').remove();
+                    //d3.select('svg').remove();
                     var width = 960,
                         height = 500,
                         radius = Math.min(width, height) / 2;
