@@ -25,7 +25,7 @@ angular.module('lqfb-stats', [
     }])
     .factory('Actives', function($http){
         return { 
-            getActiveUsers: function() { return $http.get('file.json'); }
+            getActiveUsers: function() { return $http.get('js/file.json'); }
         }
      }); 
    
