@@ -35,7 +35,7 @@ var arc = d3.svg.arc()
 
 var pie = d3.layout.pie()
     .sort(null)
-    .value(function(d) { return d.users; });
+    .value(function(d) { return d.user_count; });
 
 var svg = d3.select("body").append("svg")
     .attr("width", width)
@@ -50,13 +50,13 @@ var svg = d3.select("body").append("svg")
 
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return color(d.data.name); });
+      .style("fill", function(d) { return color(d.status); });
 
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.data.name; });
+      .text(function(d) { return d.status; });
 
 					}
 				 });
