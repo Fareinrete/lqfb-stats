@@ -10,7 +10,7 @@ directives
     };
   }])
   
- .directive('graph', function () {
+ .directive('graph', function ($scope) {
 		return {
 			restrict: 'E',
 			scope: {
