@@ -50,13 +50,13 @@ var svg = d3.select("body").append("svg")
 
   g.append("path")
       .attr("d", arc)
-      .style("fill", function(d) { return color(d.status); });
+      .style("fill", function(d) { return color(d.data.status); });
 
   g.append("text")
       .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
       .attr("dy", ".35em")
       .style("text-anchor", "middle")
-      .text(function(d) { return d.status; });
+      .text(function(d) { return d.data.status; });
 
 					}
 				 });
