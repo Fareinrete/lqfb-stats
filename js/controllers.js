@@ -12,7 +12,6 @@ function showActive($scope, $http, JsonFactory) {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
                $scope.status = status;
-               $scope.description = data.description;
                $scope.graph = data;
                console.log($scope.graph)
                console.log($scope.status)

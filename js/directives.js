@@ -18,9 +18,7 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     console.log('values from directive: ', data);
                     //d3.select('svg').remove();
-                    var width = (document.documentElement.clientWidth / 100) * 20,
-                        height = 150,
-                        radius = Math.min(width, height) / 2;
+                    
                     
                     var color = d3.scale.ordinal().range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
                     
@@ -30,7 +28,13 @@ directives.directive('appVersion', ['version',
                         return d.user_count;
                     });
                     
-                    var svg = d3.select("graphactives").append("svg").attr("width", width).attr("height", height).append("g").attr("transform", "translate(" + width / 3 + "," + height / 2 + ")");
+                    var svg = d3.select("graphactives").append("svg")
+                    
+                    var width  = svg.parentNode.width / 2,
+                        height = 150,
+                        radius = Math.min(width, height) / 2;
+                    
+                    svg.attr("width", width).attr("height", height).append("g")//.attr("transform", "translate(" + width / 3 + "," + height / 2 + ")");
                     
                     var g = svg.selectAll(".arc").data(pie(data)).enter().append("g").attr("class", "arc");
                     
