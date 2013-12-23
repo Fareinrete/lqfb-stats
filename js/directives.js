@@ -17,7 +17,7 @@ directives
 				values: '='
 			},
 			link: function (scope, element, attrs) {
-				 scope.$apply('values', function(data) {
+				 scope.$watch('values', function(data) {
                                         if(data) { 
 				var data = scope.graph.data
 						console.log('values from directive: ', data); 
