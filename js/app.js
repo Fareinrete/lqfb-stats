@@ -3,7 +3,7 @@
 //load 
 //'http',
 var ENDPOINTS = 
-          { activated:       'http://vs1.proposte.fermareildeclino.it/~fale/activated.json?callback=JSON_CALLBACK',
+          { activated:       'http://vs1.proposte.fermareildeclino.it/~fale/activated.json',
             tl_activations:  'http://api.fareinrete.org/v1/users/activations?callback=JSON_CALLBACK',
             tl_activated:    'http://api.fareinrete.org/v1/users/lastlogin?callback=JSON_CALLBACK',
             admin_activated: 'http://api.fareinrete.org/v1/admins/activated?callback=JSON_CALLBACK'
@@ -25,7 +25,7 @@ angular.module('lqfb-stats', [
     }])
     .factory('Actives', function($http){
         return { 
-            getActiveUsers: function() { return $http.jsonp(ENDPOINTS.activated); }
+            getActiveUsers: function() { return $http.get(ENDPOINTS.activated); }
         }
      }); 
    
