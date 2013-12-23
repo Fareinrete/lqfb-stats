@@ -10,14 +10,14 @@ directives
     };
   }])
   
- .directive('graph', function ($scope) {
+ .directive('graph', function () {
 		return {
 			restrict: 'E',
 			scope: {
 				values: '='
 			},
 			link: function (scope, element, attrs) {
-				var data = $scope.graph.data
+				var data = scope.graph.data
 						console.log('values from directive: ', data); 
 						
 						var width = 960,
