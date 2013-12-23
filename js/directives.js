@@ -17,6 +17,8 @@ directives
 				values: '='
 			},
 			link: function (scope, element, attrs) {
+				 scope.$apply('values', function(data) {
+                                        if(data) { 
 				var data = scope.graph.data
 						console.log('values from directive: ', data); 
 						
@@ -57,7 +59,8 @@ var svg = d3.select("body").append("svg")
       .text(function(d) { return d.data.name; });
 
 					}
-				};
-			
+				 });
+				});
+		};
 		});
 
