@@ -17,7 +17,7 @@ directives.directive('appVersion', ['version',
             scope.$watch('values', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
-                    d3.selectAll('*').remove();
+                    d3.select('svg').remove();
                     var width = 960,
                         height = 500,
                         radius = Math.min(width, height) / 2;
