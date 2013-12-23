@@ -11,7 +11,7 @@
 
     Questo è il JSON con la risposta:
     <ul>
-       <li ng-repeat="(key, value) in graph">
+       <li ng-repeat="(key, value) in graph track by $index">
           {{key}} => {{value}}
        </li> 
     </ul>
