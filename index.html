@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="en" ng-app="lqfb-stats">
+
 <head>
   <meta charset="utf-8">
   <title>LQFB Stats Analyzer</title>
   <script data-require="d3@*" data-semver="3.2.2" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.2.2/d3.v3.min.js"></script>
+  <script data-require="angular.js@*" data-semver="1.2.5" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
 </head>
+    
 <body>
   <ul class="navs nav-tabs menu">
     <li><a href="#/viewActive">Attivi</a></li>
@@ -14,13 +17,14 @@
   <div class="container" ng-view></div>
 
   <footer>
+      <div class="container">
       <div>Angular seed app: v<span app-version></span>
       </div>
+      </div>
   </footer>
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
-  -->
-  <script src="lib/angular/angular.js"></script>
+  
+  <!-- Loaders -->
+   
   <script src="lib/angular/angular-route.js"></script>
   <script src="lib/angular/angular-resource.js"></script>
   <script src="js/app.js"></script>
