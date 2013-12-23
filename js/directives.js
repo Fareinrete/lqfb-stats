@@ -19,7 +19,7 @@ directives
 			link: function (scope, element, attrs) {
 				 scope.$watch('values', function(data) {
                                         if(data) { 
-				var data = scope.graph.data
+			
 						console.log('values from directive: ', data); 
 						
 						var width = 960,
