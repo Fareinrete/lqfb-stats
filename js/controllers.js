@@ -4,12 +4,12 @@
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-function showActive($scope, $http, Actives) {
+function showActive($scope, $http, JsonFactory) {
    $scope.status = null;
    $scope.graph = null; 
     
     function getActives() {
-        Actives.getActiveUsers()
+        JsonFactory.getActiveUsers()
            .success(function(data, status) {
                $scope.status = status;
                $scope.graph = data;

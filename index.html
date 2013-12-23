@@ -9,12 +9,24 @@
 </head>
     
 <body>
-  <ul class="navs nav-tabs menu">
-    <li><a href="#/viewActive">Attivi</a></li>
-    <li><a href="#/viewTimeLine">Timeline</a></li>
-  </ul>
+    <div class="container">
+    
+    <div class="row">
+        <div ng-controller="showActive" class="col-md-2 graph">
+            
+            <graphActive values="graph.data"></graphActive>
 
-  <div class="container" ng-view></div>
+        </div>
+        <div class="col-md-2 graph">
+            
+        </div>
+        <div class="col-md-2 graph">
+            
+        </div>
+    </div>  
+   
+
+  </div>
 
   <footer>
       <div class="container">

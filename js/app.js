@@ -19,11 +19,10 @@ angular.module('lqfb-stats', [
   'lqfb-stats.controllers'
 ])
     .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/viewActive', {templateUrl: 'views/active.html', controller: 'showActive'});
-      $routeProvider.when('/viewTimeLine', {templateUrl: 'views/timeline.html'});
+      
       $routeProvider.otherwise({redirectTo: '/'});
     }])
-    .factory('Actives', function($http){
+    .factory('JsonFactory', function($http){
         return { 
             getActiveUsers: function() { return $http.get('js/file.json'); }
         }
