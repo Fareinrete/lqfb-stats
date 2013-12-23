@@ -17,8 +17,7 @@ directives
 				values: '='
 			},
 			link: function (scope, element, attrs) {
-				scope.$watch('values', function(data) {
-					if(data) { 
+				var data = $scope.graph.data
 						console.log('values from directive: ', data); 
 						
 						var width = 960,
@@ -58,7 +57,7 @@ var svg = d3.select("body").append("svg")
       .text(function(d) { return d.data.name; });
 
 					}
-				})
-			}
-		};
+				};
+			
+		});
  });
