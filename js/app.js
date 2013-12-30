@@ -22,6 +22,7 @@ angular.module('lqfb-stats', [
       
       $routeProvider.otherwise({redirectTo: '/'});
     }])
+    .value('version', '0.1')
     .factory('JsonFactory', function($http){
         return { 
             getActiveUsers: function() { return $http.get('js/file.json'); }
