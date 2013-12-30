@@ -11,20 +11,18 @@ var ENDPOINTS =
 
 // Declare app level module which depends on filters, and services
 angular.module('lqfb-stats', [
-  'ngRoute',
-  'ngResource',
   'lqfb-stats.filters',
-  'lqfb-stats.services',
   'lqfb-stats.directives',
   'lqfb-stats.controllers'
 ])
-    .config(['$routeProvider', function($routeProvider) {
-      
+    .config(['ngRoute', '$routeProvider', function($routeProvider) {
       $routeProvider.otherwise({redirectTo: '/'});
     }])
-    .factory('JsonFactory', function($http){
+    .value('version', '0.1')
+    .factory('JsonFactory', ['ngResource', function($http){
         return { 
             getActiveUsers: function() { return $http.get('js/file.json'); }
         }
-     }); 
+     }]); 
    
+
