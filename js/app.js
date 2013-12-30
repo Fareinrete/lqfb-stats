@@ -14,7 +14,6 @@ angular.module('lqfb-stats', [
   'ngRoute',
   'ngResource',
   'lqfb-stats.filters',
-  'lqfb-stats.services',
   'lqfb-stats.directives',
   'lqfb-stats.controllers'
 ])
