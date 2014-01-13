@@ -26,4 +26,5 @@ angular.module('lqfb-stats', [
         return { 
             getActiveUsers: function() { return $http.jsonp(ENDPOINTS.activated); }
         }
+    }); 
    
