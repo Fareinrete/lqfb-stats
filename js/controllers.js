@@ -4,7 +4,10 @@
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-var getJSON = function($scope, $http, JsonFactory, result) {
+function showActive($scope, $http, JsonFactory) {
+    var result = $scope.actives;
+     
+    function getActives() {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
                result['status'] = status;
@@ -20,16 +23,33 @@ var getJSON = function($scope, $http, JsonFactory, result) {
            });
        
     }
-
-function showActive($scope, $http, JsonFactory) {
-    var result = $scope.actives;
-    getJSON(result);
+    
+    
+    getActives();
     
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
      var result = $scope.tl_activations;
-     getJSON(result)
+    
+     function getDailyActivations() {
+        JsonFactory.getTLActivations()
+           .success(function(data, status) {
+               result['status'] = status;
+               result['graph'] = data;
+               console.log(result.graph)
+               console.log(result.status)
+           })
+           .error(function(data, status) {
+               result['graph'] = data || "Request failed";
+               result['status'] = status;
+               console.log(result.graph)
+               console.log(result.status)
+           });
+       
+    }
+    
+    getDailyActivations()
 }
 
 controllers
