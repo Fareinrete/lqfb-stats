@@ -65,7 +65,7 @@ directives.directive('appVersion', ['version',
 			var barPadding = 3;
             var dataset = [];
                     for (var i in data){
-                        dataset.push(data[i]); 
+                        dataset.push(data[i]['user_count']); 
                     }
                     
             console.log('dataset: ', dataset);        
