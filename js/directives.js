@@ -109,7 +109,7 @@ directives.directive('appVersion', ['version',
 			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
 			   })
 			   .attr("y", function(d) {
-			   		return h - (d * 4) + 14;
+			   		return h - 80;
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
