@@ -5,42 +5,31 @@
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showIndex($scope, $http, JsonFactory) {
-    $scope.actives.status = null;
-    $scope.actives.graph = null;
-    $scope.tl_activations.status = null;
-    $scope.tl_activations.graph = null;
-    var actives = $scope.actives;
-    var tl = $scope.tl_activations;
-     
+    $scope.actives = null;
+    $scope.tl_activations = null;
+      
     function getActives() {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
-               actives['status'] = status;
-               actives['graph'] = data;
-               console.log(actives['status'])
-               console.log(actives['status'])
+               $scope.actives = data
+               console.log(actives)
+               
            })
            .error(function(data, status) {
-               actives['graph'] = data || "Request failed";
-               actives['status'] = status;
-               console.log(actives['graph'])
-               console.log(actives['status'])
+               $scope.actives = data
+               console.log($scope.actives)
            });
        
     }
     function getDailyActivations() {
         JsonFactory.getTLActivations()
            .success(function(data, status) {
-               tl['status'] = status;
-               tl['graph'] = data;
-               console.log(tl['graph'])
-               console.log(tl['status'])
+               $scope.tl_activations = data
+               console.log($scope.tl_activations)
            })
            .error(function(data, status) {
-               tl['status'] = status;
-               tl['graph'] = data;
-               console.log(tl['graph'])
-               console.log(tl['status'])
+               $scope.tl_activations = data
+               console.log($scope.tl_activations)
            });
        
     }
