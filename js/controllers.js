@@ -4,52 +4,54 @@
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-function showActive($scope, $http, JsonFactory) {
-    var result = $scope.actives;
+function showIndex($scope, $http, JsonFactory) {
+    var actives = $scope.actives;
+    var tl = $scope.tl_activations;
      
     function getActives() {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
-               result['status'] = status;
-               result['graph'] = data;
-               console.log(result.graph)
-               console.log(result.status)
+               actives['status'] = status;
+               actives['graph'] = data;
+               console.log(actives['status'])
+               console.log(actives['status'])
            })
            .error(function(data, status) {
-               result['graph'] = data || "Request failed";
-               result['status'] = status;
-               console.log(result.graph)
-               console.log(result.status)
+               actives['graph'] = data || "Request failed";
+               actives['status'] = status;
+               console.log(actives['graph'])
+               console.log(actives['status'])
+           });
+       
+    }
+    function getDailyActivations() {
+        JsonFactory.getTLActivations()
+           .success(function(data, status) {
+               tl['status'] = status;
+               tl['graph'] = data;
+               console.log(tl['graph'])
+               console.log(tl['status'])
+           })
+           .error(function(data, status) {
+               tl['status'] = status;
+               tl['graph'] = data;
+               console.log(tl['graph'])
+               console.log(tl['status'])
            });
        
     }
     
     
     getActives();
-    
+    getDailyActivations()
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
-     var result = $scope.tl_activations;
+     
     
-     function getDailyActivations() {
-        JsonFactory.getTLActivations()
-           .success(function(data, status) {
-               result['status'] = status;
-               result['graph'] = data;
-               console.log(result.graph)
-               console.log(result.status)
-           })
-           .error(function(data, status) {
-               result['graph'] = data || "Request failed";
-               result['status'] = status;
-               console.log(result.graph)
-               console.log(result.status)
-           });
-       
-    }
+     
     
-    getDailyActivations()
+    
 }
 
 controllers
