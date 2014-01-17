@@ -11,7 +11,7 @@ directives.directive('appVersion', ['version',
     return {
         restrict: 'E',
         scope: {
-            values: '='
+            values_activated: '='
         },
         link: function(scope, element, attrs) {
             scope.$watch('values_activated', function(data) {
@@ -52,7 +52,7 @@ directives.directive('appVersion', ['version',
     return {
         restrict: 'E',
         scope: {
-            values: '='
+            values_activations: '='
         },
         link: function(scope, element, attrs) {
             scope.$watch('values_activations', function(data) {
