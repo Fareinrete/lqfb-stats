@@ -5,8 +5,10 @@
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showIndex($scope, $http, JsonFactory) {
-    $scope.actives = null;
-    $scope.tl_activations = null;
+    $scope.actives.status = null;
+    $scope.actives.graph = null;
+    $scope.tl_activations.status = null;
+    $scope.tl_activations.graph = null;
     var actives = $scope.actives;
     var tl = $scope.tl_activations;
      
@@ -45,7 +47,7 @@ function showIndex($scope, $http, JsonFactory) {
     
     
     getActives();
-    getDailyActivations()
+    getDailyActivations();
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
