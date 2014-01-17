@@ -74,7 +74,8 @@ directives.directive('appVersion', ['version',
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h)
-                        .attr("transform", "translate(" + w / 3 + "," + h / 2 + ")");
+                        .attr("transform", "translate(" + w / 3 + "," + h / 2 + ")")
+                        ;
 
 			svg.selectAll("rect")
 			   .data(dataset)
@@ -89,7 +90,10 @@ directives.directive('appVersion', ['version',
 			   .attr("width", w / dataset.length - barPadding)
 			   .attr("height", function(d) {
 			   		return d * 4;
-			   });    
+			   })
+               .style("fill", function(d) {
+                        return '#98abc5';
+               });    
                     
                 }
             });
