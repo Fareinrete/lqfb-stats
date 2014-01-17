@@ -62,8 +62,8 @@ directives.directive('appVersion', ['version',
                 height = 150;
 			var barPadding = 3;
             var dataset = [];
-                    for v,k in data {
-                        dataset.push(v)
+                    for (k in data) {
+                        dataset.push(data[k])
                        
                     }
                     
