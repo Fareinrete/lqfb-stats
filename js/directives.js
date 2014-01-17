@@ -68,7 +68,7 @@ directives.directive('appVersion', ['version',
                     
             console.log('dataset: ', dataset);        
 			//Create SVG element
-			var svg = d3.select("body")
+			var svg = d3.select("graphactivations")
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h);
