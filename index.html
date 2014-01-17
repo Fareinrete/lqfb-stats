@@ -14,14 +14,14 @@
 </head>
     
 <body>
-    <div class="container">
+    <div ng-controller="showIndex" class="container">
     
     <div class="row">
-       <div ng-controller="showActive" class="col-md-4 title">
+       <div class="col-md-4 title">
            <h4>{{actives.description}}</h4> 
         </div>
         
-        <div ng-controller="showDailyActivations" class="col-md-4 title">
+        <div class="col-md-4 title">
            <h4>{{tl_activations.description}}</h4> 
         </div>
         
@@ -33,12 +33,12 @@
         </div>
     </div>
     <div class="row">
-        <div ng-controller="showActive" class="col-md-4 graph">
+        <div class="col-md-4 graph">
             
             <graphactives values="actives.data"></graphactives>
             
         </div>
-        <div ng-controller="showDailyActivations" class="col-md-4 graph">
+        <div class="col-md-4 graph">
             
             <graph_tl_activations values="tl_activations.data"></graph_tl_activations>
             

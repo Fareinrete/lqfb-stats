@@ -39,14 +39,5 @@ function showIndex($scope, $http, JsonFactory) {
     getDailyActivations();
 }
 
-function showDailyActivations($scope, $http, JsonFactory) {
-     
-    
-     
-    
-    
-}
-
 controllers
-    .controller('showActive', showActive)
-    .controller('showDailyActivations', showDailyActivations);
+    .controller('showIndex', showIndex);
