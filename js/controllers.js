@@ -5,21 +5,21 @@
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showActive($scope, $http, JsonFactory) {
-   $scope.actives;
+    var result = $scope.actives;
      
     function getActives() {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
-               $scope.actives.status = status;
-               $scope.actives.graph = data;
-               console.log($scope.actives.graph)
-               console.log($scope.actives.status)
+               result.status = status;
+               result.graph = data;
+               console.log(result.graph)
+               console.log(result.status)
            })
            .error(function(data, status) {
-               $scope.actives.graph = data || "Request failed";
-               $scope.actives.status = status;
-               console.log($scope.actives.graph)
-               console.log($scope.actives.status)
+               result.graph = data || "Request failed";
+               result.status = status;
+               console.log(result.graph)
+               console.log(result.status)
            });
        
     }
@@ -30,21 +30,21 @@ function showActive($scope, $http, JsonFactory) {
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
-     $scope.tl_activations;
+     var result = $scope.tl_activations;
     
      function getDailyActivations() {
         JsonFactory.getTLActivations()
            .success(function(data, status) {
-               $scope.tl_activations.status = status;
-               $scope.tl_activations.graph = data;
-               console.log($scope.tl_activations.graph)
-               console.log($scope.tl_activations.status)
+               result.status = status;
+               result.graph = data;
+               console.log(result.graph)
+               console.log(result.status)
            })
            .error(function(data, status) {
-               $scope.tl_activations.graph = data || "Request failed";
-               $scope.tl_activations.status = status;
-               console.log($scope.tl_activations.graph)
-               console.log($scope.tl_activations.status)
+               result.graph = data || "Request failed";
+               result.status = status;
+               console.log(result.graph)
+               console.log(result.status)
            });
        
     }
