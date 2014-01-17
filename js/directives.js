@@ -14,7 +14,7 @@ directives.directive('appVersion', ['version',
             values: '='
         },
         link: function(scope, element, attrs) {
-            scope.$watch('values', function(data) {
+            scope.$watch('values_activated', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
                     //d3.select('svg').remove();
@@ -55,7 +55,7 @@ directives.directive('appVersion', ['version',
             values: '='
         },
         link: function(scope, element, attrs) {
-            scope.$watch('values', function(data) {
+            scope.$watch('values_activations', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
                     
