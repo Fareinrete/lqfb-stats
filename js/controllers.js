@@ -5,6 +5,8 @@
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showIndex($scope, $http, JsonFactory) {
+    $scope.actives = null;
+    $scope.tl_activations = null;
     var actives = $scope.actives;
     var tl = $scope.tl_activations;
      
