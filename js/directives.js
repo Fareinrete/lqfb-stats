@@ -113,13 +113,8 @@ directives.directive('appVersion', ['version',
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
-			   .attr("fill", "#555");
-                    
-             svg.selectAll("text")
-			   .data(dataset)
-			   .enter()
-			   .append("text")
-			   .text(function(d) {
+			   .attr("fill", "#555")
+               .text(function(d) {
 			   		return d[1];
 			   })
 			   .attr("text-anchor", "middle")
@@ -131,7 +126,10 @@ directives.directive('appVersion', ['version',
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
-			   .attr("fill", "#555");
+			   .attr("fill", "#555");;
+                    
+            
+			   
                     
                 }
             });
