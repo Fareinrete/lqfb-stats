@@ -5,7 +5,7 @@
 var controllers = angular.module('lqfb-stats.controllers', []);
 
 function showActive($scope, $http, JsonFactory) {
-   $scope.actives = null;
+   $scope.actives;
      
     function getActives() {
         JsonFactory.getActiveUsers()
@@ -30,7 +30,7 @@ function showActive($scope, $http, JsonFactory) {
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
-     $scope.tl_activations = null;
+     $scope.tl_activations;
     
      function getDailyActivations() {
         JsonFactory.getTLActivations()
