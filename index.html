@@ -21,7 +21,7 @@
            <h4>{{actives.graph.description}}</h4> 
         </div>
         
-        <div ng-controller="getTLActivations" class="col-md-4 title">
+        <div ng-controller="showDailyActivations" class="col-md-4 title">
            <h4>{{tl_activations.graph.description}}</h4> 
         </div>
         
@@ -38,7 +38,7 @@
             <graphactives values="actives.graph.data"></graphactives>
             
         </div>
-        <div ng-controller="getTLActivations" class="col-md-4 graph">
+        <div ng-controller="showDailyActivations" class="col-md-4 graph">
             
             <graph_tl_activations values="tl_activations.graph.data"></graph_tl_activations>
             
