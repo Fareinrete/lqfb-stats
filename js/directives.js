@@ -102,7 +102,7 @@ directives.directive('appVersion', ['version',
 			   .enter()
 			   .append("text")
 			   .text(function(d) {
-			   		return d[0]+'\n'+d[1];
+			   		return d[0]+'<br/>'+d[1];
 			   })
 			   .attr("text-anchor", "middle")
 			   .attr("x", function(d, i) {
@@ -113,7 +113,7 @@ directives.directive('appVersion', ['version',
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
-			   .attr("fill", "white");
+			   .attr("fill", "#555");
                     
                 }
             });
