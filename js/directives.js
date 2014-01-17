@@ -59,8 +59,9 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     console.log('values from directive: ', data);
                     
-			var w = (document.documentElement.clientWidth / 100) * 88,
-                h = 200;
+			var w = 600;
+			var h = 100;
+			var barPadding = 1;
 			var barPadding = 3;
            			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
 							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
