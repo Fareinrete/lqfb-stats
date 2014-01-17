@@ -11,10 +11,10 @@ directives.directive('appVersion', ['version',
     return {
         restrict: 'E',
         scope: {
-            values_activated: '='
+            valuesactivated: '='
         },
         link: function(scope, element, attrs) {
-            scope.$watch('values_activated', function(data) {
+            scope.$watch('valuesactivated', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
                     //d3.select('svg').remove();
@@ -52,10 +52,10 @@ directives.directive('appVersion', ['version',
     return {
         restrict: 'E',
         scope: {
-            values_activations: '='
+            valuesactivations: '='
         },
         link: function(scope, element, attrs) {
-            scope.$watch('values_activations', function(data) {
+            scope.$watch('valuesactivations', function(data) {
                 if(data) {
                     console.log('values from directive: ', data);
                     
