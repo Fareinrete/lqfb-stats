@@ -59,8 +59,8 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     console.log('values from directive: ', data);
                     
-			var w = 600;
-			var h = 100;
+			var w = (document.documentElement.clientWidth / 100) * 88,;
+			var h = 150;
 			var barPadding = 1;
 			var barPadding = 3;
            			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
@@ -71,7 +71,8 @@ directives.directive('appVersion', ['version',
 			var svg = d3.select("graphactivations")
 						.append("svg")
 						.attr("width", w)
-						.attr("height", h);
+						.attr("height", h)
+                        .attr("transform", "translate(" + w / 3 + "," + h / 2 + ")");
 
 			svg.selectAll("rect")
 			   .data(dataset)
