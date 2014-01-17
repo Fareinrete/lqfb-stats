@@ -95,7 +95,20 @@ directives.directive('appVersion', ['version',
 			   })
                .attr("fill", function(d) {
                     return "rgb(152, 171, " + (d[0] * 10) + ")";
-               });
+               })
+               .text(function(d) {
+			   		return d[1];
+			   })
+			   .attr("text-anchor", "middle")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+			   })
+			   .attr("y", function(d) {
+			   		return h - 50;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "#555");
                     
              svg.selectAll("text")
 			   .data(dataset)
@@ -113,23 +126,8 @@ directives.directive('appVersion', ['version',
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
-			   .attr("fill", "#555")
-               .text(function(d) {
-			   		return d[1];
-			   })
-			   .attr("text-anchor", "middle")
-			   .attr("x", function(d, i) {
-			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-			   })
-			   .attr("y", function(d) {
-			   		return h - 50;
-			   })
-			   .attr("font-family", "sans-serif")
-			   .attr("font-size", "11px")
-			   .attr("fill", "#555");;
-                    
-            
-			   
+			   .attr("fill", "#555");
+            			   
                     
                 }
             });
