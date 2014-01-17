@@ -57,6 +57,7 @@ directives.directive('appVersion', ['version',
         link: function(scope, element, attrs) {
             scope.$watch('values', function(data) {
                 if(data) {
+                    console.log('values from directive: ', data);
                     
 			var width = (document.documentElement.clientWidth / 100) * 16,
                 height = 150;
