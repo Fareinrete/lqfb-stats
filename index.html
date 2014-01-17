@@ -18,11 +18,11 @@
     
     <div class="row">
        <div ng-controller="showActive" class="col-md-4 title">
-           <h4>{{graph.actives.description}}</h4> 
+           <h4>{{actives.graph.description}}</h4> 
         </div>
         
         <div ng-controller="getTLActivations" class="col-md-4 title">
-           <h4>{{graph.tl_activations.description}}</h4> 
+           <h4>{{tl_activations.graph.description}}</h4> 
         </div>
         
         <div class="col-md-4 title">
@@ -35,12 +35,12 @@
     <div class="row">
         <div ng-controller="showActive" class="col-md-4 graph">
             
-            <graphactives values="graph.actives.data"></graphactives>
+            <graphactives values="actives.graph.data"></graphactives>
             
         </div>
         <div ng-controller="getTLActivations" class="col-md-4 graph">
             
-            <graph_tl_activations values="graph.tl_activations.data"></graph_tl_activations>
+            <graph_tl_activations values="tl_activations.graph.data"></graph_tl_activations>
             
         </div>
         <div class="col-md-4 graph">
