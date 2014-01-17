@@ -64,8 +64,10 @@ directives.directive('appVersion', ['version',
 			var barPadding = 1;
 			var barPadding = 3;
             var dataset = [];
+            var dates = []
                     for (var i in data){
                         dataset.push(data[i]['user_count']); 
+                        dates.push(data[i]['date']);
                     }
                     
             console.log('dataset: ', dataset);        
@@ -91,9 +93,27 @@ directives.directive('appVersion', ['version',
 			   .attr("height", function(d) {
 			   		return d * 4;
 			   })
-               .style("fill", function(d) {
-                        return '#98abc5';
-               });    
+               .attr("fill", function(d) {
+                    return "rgb(152, 171, " + (d * 10) + ")";
+               });
+                    
+             svg.selectAll("text")
+			   .data(dates)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d;
+			   })
+			   .attr("text-anchor", "middle")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dates.length) + (w / dates.length - barPadding) / 2;
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4) + 14;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "white");
                     
                 }
             });
