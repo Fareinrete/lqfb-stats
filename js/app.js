@@ -24,7 +24,8 @@ angular.module('lqfb-stats', [
     .value('version', '0.1')
     .factory('JsonFactory', function($http){
         return { 
-            getActiveUsers: function() { return $http.jsonp(ENDPOINTS.activated); }
+            getActiveUsers: function() { return $http.jsonp(ENDPOINTS.activated); },
+            getActiveAdmins: function() { return $http.jsonp(ENDPOINTS.admin_activated); },
         }
     }); 
    

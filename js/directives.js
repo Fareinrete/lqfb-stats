@@ -48,4 +48,48 @@ directives.directive('appVersion', ['version',
             });
         }
     };
+}).directive('graph_tl_activations', function() {
+    return {
+        restrict: 'E',
+        scope: {
+            values: '='
+        },
+        link: function(scope, element, attrs) {
+            scope.$watch('values', function(data) {
+                if(data) {
+                    
+			var width = (document.documentElement.clientWidth / 100) * 16,
+                height = 150,
+			var barPadding = 3;
+            var dataset = [];
+                    for v,k in data {
+                        dataset.push(v)
+                       
+                    }
+                    
+			//Create SVG element
+			var svg = d3.select("body")
+						.append("svg")
+						.attr("width", w)
+						.attr("height", h);
+
+			svg.selectAll("rect")
+			   .data(dataset)
+			   .enter()
+			   .append("rect")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length);
+			   })
+			   .attr("y", function(d) {
+			   		return h - (d * 4);
+			   })
+			   .attr("width", w / dataset.length - barPadding)
+			   .attr("height", function(d) {
+			   		return d * 4;
+			   });    
+                    
+                }
+            });
+        }
+    }
 });
