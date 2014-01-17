@@ -64,10 +64,10 @@ directives.directive('appVersion', ['version',
 			var barPadding = 1;
 			var barPadding = 3;
             var dataset = [];
-            var dates = []
+            
                     for (var i in data){
-                        dataset.push(data[i]['user_count']); 
-                        dates.push(data[i]['date']);
+                        dataset.push([data[i]['user_count'], data[i]['date']]); 
+                        
                     }
                     
             console.log('dataset: ', dataset);        
@@ -87,26 +87,26 @@ directives.directive('appVersion', ['version',
 			   		return i * (w / dataset.length);
 			   })
 			   .attr("y", function(d) {
-			   		return h - (d * 4);
+			   		return h - (d[0] * 4);
 			   })
 			   .attr("width", w / dataset.length - barPadding)
 			   .attr("height", function(d) {
-			   		return d * 4;
+			   		return d[0] * 4;
 			   })
                .attr("fill", function(d) {
-                    return "rgb(152, 171, " + (d * 10) + ")";
+                    return "rgb(152, 171, " + (d[0] * 10) + ")";
                });
                     
              svg.selectAll("text")
-			   .data(dates)
+			   .data(dataset)
 			   .enter()
 			   .append("text")
 			   .text(function(d) {
-			   		return d;
+			   		return d[0]+'\n'+d[1];
 			   })
 			   .attr("text-anchor", "middle")
 			   .attr("x", function(d, i) {
-			   		return i * (w / dates.length) + (w / dates.length - barPadding) / 2;
+			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
 			   })
 			   .attr("y", function(d) {
 			   		return h - (d * 4) + 14;
