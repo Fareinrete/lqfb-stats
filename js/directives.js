@@ -48,7 +48,7 @@ directives.directive('appVersion', ['version',
             });
         }
     };
-}).directive('graph_tl_activations', function() {
+}).directive('graphactivations', function() {
     return {
         restrict: 'E',
         scope: {
@@ -59,8 +59,8 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     console.log('values from directive: ', data);
                     
-			var width = (document.documentElement.clientWidth / 100) * 16,
-                height = 150;
+			var width = (document.documentElement.clientWidth / 100) * 88,
+                height = 200;
 			var barPadding = 3;
             var dataset = [];
                     for (k in data) {
@@ -68,6 +68,7 @@ directives.directive('appVersion', ['version',
                        
                     }
                     
+            console.log('dataset: ', dataset);        
 			//Create SVG element
 			var svg = d3.select("body")
 						.append("svg")
