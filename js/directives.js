@@ -102,7 +102,7 @@ directives.directive('appVersion', ['version',
 			   .enter()
 			   .append("text")
 			   .text(function(d) {
-			   		return d[0]+'<br/>'+d[1];
+			   		return d[0];
 			   })
 			   .attr("text-anchor", "middle")
 			   .attr("x", function(d, i) {
@@ -110,6 +110,24 @@ directives.directive('appVersion', ['version',
 			   })
 			   .attr("y", function(d) {
 			   		return h - 80;
+			   })
+			   .attr("font-family", "sans-serif")
+			   .attr("font-size", "11px")
+			   .attr("fill", "#555");
+                    
+             svg.selectAll("text")
+			   .data(dataset)
+			   .enter()
+			   .append("text")
+			   .text(function(d) {
+			   		return d[1];
+			   })
+			   .attr("text-anchor", "middle")
+			   .attr("x", function(d, i) {
+			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+			   })
+			   .attr("y", function(d) {
+			   		return h - 50;
 			   })
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
