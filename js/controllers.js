@@ -4,52 +4,32 @@
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-function showActive($scope, $http, JsonFactory) {
-    var result = $scope.actives;
-     
-    function getActives() {
+var getJSON = function get(result) {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
-               result.status = status;
-               result.graph = data;
+               result['status'] = status;
+               result['graph'] = data;
                console.log(result.graph)
                console.log(result.status)
            })
            .error(function(data, status) {
-               result.graph = data || "Request failed";
-               result.status = status;
+               result['graph'] = data || "Request failed";
+               result['status'] = status;
                console.log(result.graph)
                console.log(result.status)
            });
        
     }
-    
-    
-    getActives();
+
+function showActive($scope, $http, JsonFactory) {
+    var result = $scope.actives;
+    getJSON(result);
     
 }
 
 function showDailyActivations($scope, $http, JsonFactory) {
      var result = $scope.tl_activations;
-    
-     function getDailyActivations() {
-        JsonFactory.getTLActivations()
-           .success(function(data, status) {
-               result.status = status;
-               result.graph = data;
-               console.log(result.graph)
-               console.log(result.status)
-           })
-           .error(function(data, status) {
-               result.graph = data || "Request failed";
-               result.status = status;
-               console.log(result.graph)
-               console.log(result.status)
-           });
-       
-    }
-    
-    getDailyActivations()
+     getJSON(result)
 }
 
 controllers
