@@ -59,7 +59,7 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     
 			var width = (document.documentElement.clientWidth / 100) * 16,
-                height = 150,
+                height = 150;
 			var barPadding = 3;
             var dataset = [];
                     for v,k in data {
