@@ -61,12 +61,12 @@ directives.directive('appVersion', ['version',
                     
 			var w = (document.documentElement.clientWidth / 100) * 88;
 			var h = 150;
-			var barPadding = 1;
+			
 			var barPadding = 3;
             var dataset = [];
             
                     for (var i in data){
-                        dataset.push([data[i]['user_count'], data[i]['date']]); 
+                        dataset.push([data[i]['user_count'], data[i]['date']+': '+data[i]['user_count']]); 
                         
                     }
                     
@@ -95,27 +95,14 @@ directives.directive('appVersion', ['version',
 			   })
                .attr("fill", function(d) {
                     return "rgb(152, 171, " + (d[0] * 10) + ")";
-               })
-               .text(function(d) {
-			   		return d[1];
-			   })
-			   .attr("text-anchor", "middle")
-			   .attr("x", function(d, i) {
-			   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-			   })
-			   .attr("y", function(d) {
-			   		return h - 50;
-			   })
-			   .attr("font-family", "sans-serif")
-			   .attr("font-size", "11px")
-			   .attr("fill", "#555");
+               });
                     
              svg.selectAll("text")
 			   .data(dataset)
 			   .enter()
 			   .append("text")
 			   .text(function(d) {
-			   		return d[0];
+			   		return d[1];
 			   })
 			   .attr("text-anchor", "middle")
 			   .attr("x", function(d, i) {
@@ -127,8 +114,7 @@ directives.directive('appVersion', ['version',
 			   .attr("font-family", "sans-serif")
 			   .attr("font-size", "11px")
 			   .attr("fill", "#555");
-            			   
-                    
+                                  
                 }
             });
         }
