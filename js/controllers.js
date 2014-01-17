@@ -11,8 +11,8 @@ function showIndex($scope, $http, JsonFactory) {
     function getActives() {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
-               $scope.actives = data
-               console.log(actives)
+               $scope.actives = data;
+               console.log($scope.actives);
                
            })
            .error(function(data, status) {
