@@ -59,7 +59,7 @@ directives.directive('appVersion', ['version',
                 if(data) {
                     console.log('values from directive: ', data);
                     
-			var w = (document.documentElement.clientWidth / 100) * 88,;
+			var w = (document.documentElement.clientWidth / 100) * 88;
 			var h = 150;
 			var barPadding = 1;
 			var barPadding = 3;
