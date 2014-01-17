@@ -4,7 +4,7 @@
 
 var controllers = angular.module('lqfb-stats.controllers', []);
 
-var getJSON = function get(result) {
+var getJSON = function($scope, $http, JsonFactory, result) {
         JsonFactory.getActiveUsers()
            .success(function(data, status) {
                result['status'] = status;
