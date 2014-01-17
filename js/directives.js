@@ -62,11 +62,8 @@ directives.directive('appVersion', ['version',
 			var width = (document.documentElement.clientWidth / 100) * 88,
                 height = 200;
 			var barPadding = 3;
-            var dataset = [];
-                    for (k in data) {
-                        dataset.push(data[k])
-                       
-                    }
+           			var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
                     
             console.log('dataset: ', dataset);        
 			//Create SVG element
