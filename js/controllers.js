@@ -7,12 +7,12 @@ var controllers = angular.module('lqfb-stats.controllers', []);
 function showIndex($scope, $http, JsonFactory) {
     $scope.actives = null;
     $scope.tl_activations = null;
-    $scope.tl_Activated = null;
+    $scope.tl_Login = null;
     $scope.admin_activated = null;
     
     var factories = { actives: JsonFactory.getActiveUsers(),
                       tl_activations: JsonFactory.getTLActivations(),
-                      tl_Activated: JsonFactory.getTL_Activated(),
+                      tl_Login: JsonFactory.getTL_Login(),
                       admin_activated: JsonFactory.getAdminActivated()}
     
     function getFactories(){

@@ -5,7 +5,7 @@
 var ENDPOINTS = 
           { activated:       'http://api.fareinrete.org/v1/users/activated?callback=JSON_CALLBACK',
             tl_activations:  'http://api.fareinrete.org/v1/users/activations?callback=JSON_CALLBACK',
-            tl_activated:    'http://api.fareinrete.org/v1/users/lastlogin?callback=JSON_CALLBACK',
+            tl_login:    'http://api.fareinrete.org/v1/users/lastlogin?callback=JSON_CALLBACK',
             admin_activated: 'http://api.fareinrete.org/v1/admins/activated?callback=JSON_CALLBACK'
            };
 
@@ -26,7 +26,7 @@ angular.module('lqfb-stats', [
         return { 
             getActiveUsers: function() { return $http.jsonp(ENDPOINTS.activated); },
             getTLActivations: function() { return $http.jsonp(ENDPOINTS.tl_activations); },
-            getTL_Activated: function() { return $http.jsonp(ENDPOINTS.tl_activated); },
+            getTL_Login: function() { return $http.jsonp(ENDPOINTS.tl_login); },
             getAdminActivated: function() { return $http.jsonp(ENDPOINTS.admin_activated); }
         }
     }); 
