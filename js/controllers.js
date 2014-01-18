@@ -7,36 +7,31 @@ var controllers = angular.module('lqfb-stats.controllers', []);
 function showIndex($scope, $http, JsonFactory) {
     $scope.actives = null;
     $scope.tl_activations = null;
-      
-    function getActives() {
-        JsonFactory.getActiveUsers()
-           .success(function(data, status) {
-               $scope.actives = data;
-               console.log($scope.actives);
+    $scope.tl_Activated = null;
+    $scope.admin_activated = null;
+    
+    var factories = { actives: JsonFactory.getActiveUsers(),
+                      tl_activations: JsonFactory.getTLActivations(),
+                      tl_Activated: JsonFactory.getTL_Activated(),
+                      admin_activated: JsonFactory.getAdminActivated}
+    
+    function getFactories(){
+        for (k in factories){
+            factories[k].success(function(data, status) {
+               $scope.k = data;
+               console.log($scope.k);
                
-           })
-           .error(function(data, status) {
-               $scope.actives = data
-               console.log($scope.actives)
+               })
+               .error(function(data, status) {
+               $scope.k = data
+               console.log($scope.k)
            });
-       
+            
+        }
+        
     }
-    function getDailyActivations() {
-        JsonFactory.getTLActivations()
-           .success(function(data, status) {
-               $scope.tl_activations = data
-               console.log($scope.tl_activations)
-           })
-           .error(function(data, status) {
-               $scope.tl_activations = data
-               console.log($scope.tl_activations)
-           });
-       
-    }
-    
-    
-    getActives();
-    getDailyActivations();
+      
+    getFactories();
 }
 
 controllers
