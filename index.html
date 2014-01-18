@@ -21,26 +21,22 @@
            <h4>{{actives.description}}</h4> 
         </div>
         <div class="col-md-4 title">
-            <h4>title</h4> 
+            <h4>{{tl_Activated.description}}</h4> 
         </div>
         <div class="col-md-4 title">
-            <h4>title</h4> 
+            <h4>{{admin_activated.description}}</h4>  
         </div>
     </div>
         
     <div class="row">
         <div class="col-md-4 graph">
-            
             <graphactives valuesactivated="actives.data"></graphactives>
-            
         </div>
         <div class="col-md-4 graph">
             
         </div>
-            
-        
         <div class="col-md-4 graph">
-            
+            <adminactivated valuesadminactivated="actives.data"></adminactivated>    
         </div>
     </div>  
    
@@ -50,6 +46,14 @@
        </div>
        <div class="col-md-12 graph">
            <graphactivations valuesactivations="tl_activations.data"></graphactivations>
+       </div>
+    </div>
+    <div class="row">    
+       <div class="col-md-12 title">
+           <h4>{{tl_Activated.description}}</h4> 
+       </div>
+       <div class="col-md-12 graph">
+           <graphactlactivated valuestlactivated="tl_Activated.data"></graphactlactivated>
        </div>
     </div>
   
