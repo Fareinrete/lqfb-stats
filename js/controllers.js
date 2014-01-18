@@ -32,6 +32,7 @@ function showIndex($scope, $http, JsonFactory) {
     }
       
     getFactories();
+    console.log($scope)
 }
 
 controllers
