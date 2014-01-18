@@ -13,7 +13,7 @@ function showIndex($scope, $http, JsonFactory) {
     var factories = { actives: JsonFactory.getActiveUsers(),
                       tl_activations: JsonFactory.getTLActivations(),
                       tl_Activated: JsonFactory.getTL_Activated(),
-                      admin_activated: JsonFactory.getAdminActivated}
+                      admin_activated: JsonFactory.getAdminActivated()}
     
     function getFactories(){
         for (var k in factories){
