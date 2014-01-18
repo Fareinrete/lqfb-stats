@@ -7,7 +7,9 @@ directives.directive('appVersion', ['version',
             elm.text(version);
         };
     }
-]).directive('graphactives', function() {
+]);
+
+directives.directive('graphactives', function() {
     return {
         restrict: 'E',
         scope: {
@@ -48,7 +50,9 @@ directives.directive('appVersion', ['version',
             });
         }
     };
-}).directive('graphactivations', function() {
+});
+
+directives.directive('graphactivations', function() {
     return {
         restrict: 'E',
         scope: {
