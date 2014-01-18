@@ -16,7 +16,7 @@ function showIndex($scope, $http, JsonFactory) {
                       admin_activated: JsonFactory.getAdminActivated}
     
     function getFactories(){
-        for (k in factories){
+        for (var k in factories){
             factories[k].success(function(data, status) {
                $scope.k = data;
                console.log($scope.k);
