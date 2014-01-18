@@ -119,7 +119,9 @@ directives.directive('appVersion', ['version',
             });
         }
     }
-}).directive('graphtllogin', function() {
+});
+/*
+.directive('graphtllogin', function() {
     return {
         restrict: 'E',
         scope: {
@@ -230,3 +232,4 @@ directives.directive('appVersion', ['version',
         }
     };
 });
+*/
